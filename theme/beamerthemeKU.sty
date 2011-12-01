@@ -1,0 +1,29 @@
+\ProvidesPackage{beamerthemeKU}
+
+\mode<presentation>
+
+\def\beamer@kucolor{}
+\def\beamer@nokucolor{}
+
+\DeclareOptionBeamer{bio}{\def\beamer@kucolor{bio}}
+\DeclareOptionBeamer{farma}{\def\beamer@kucolor{farma}}
+\DeclareOptionBeamer{nat}{\def\beamer@kucolor{nat}}
+
+\ProcessOptionsBeamer
+
+\useoutertheme{sidebar}
+\useinnertheme{rounded}
+\useinnertheme{circles}
+
+\usecolortheme{orchid}
+\usecolortheme{whale}
+\usecolortheme{ku}
+\ifx\beamer@kucolor\beamer@nokucolor%
+\else%  
+  \usecolortheme{ku\beamer@kucolor}%
+\fi%
+
+\setbeamerfont{block title}{size={}}
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\mode<all>
